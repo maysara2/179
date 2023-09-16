@@ -1,0 +1,221 @@
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("العدد الإجمالي للطلاب: ");
+        int numberOfStudents = scanner.nextInt();
+
+        // تعريف متغير لتخزين أعلى علامة
+        double highestGrade = -1; // نستخدم -1 كقيمة افتراضية لأعلى علامة
+
+        // تعريف متغير لتخزين رقم الطالب ذي أعلى علامة
+        int highestGradeStudentNumber = -1; // نستخدم -1 كقيمة افتراضية لرقم الطالب
+
+        // قم بقراءة علامات الطلاب وتحديد أعلى علامة
+        for (int i = 1; i <= numberOfStudents; i++) {
+            System.out.print("العلامة للطالب رقم " + i + ": ");
+            double grade = scanner.nextDouble();
+
+            // قارن العلامة مع أعلى علامة محتفظ بها
+            if (grade > highestGrade) {
+                highestGrade = grade;
+                highestGradeStudentNumber = i;
+            }
+        }
+
+        System.out.println("أعلى علامة هي " + highestGrade + " للطالب رقم " + highestGradeStudentNumber);
+
+        // هنا يمكنك إضافة شروط إضافية لمقارنة العلامات حسب متطلباتك
+        // على سبيل المثال، يمكنك استخدام هياكل تحكم مثل if و else if و else لتنفيذ المقارنات.
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+اكتب الكود يطلب من المستخدم ادخال عدد الطلبه المطلوب ادخال علامتهم 
+
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("العدد الإجمالي للطلاب: ");
+        int numberOfStudents = scanner.nextInt();
+
+        // قم بقراءة علامات الطلاب
+        for (int i = 1; i <= numberOfStudents; i++) {
+            System.out.print("العلامة للطالب رقم " + i + ": ");
+            double grade = scanner.nextDouble();
+        }
+
+        // لاحقًا يمكنك إضافة المزيد من المعالجة والشروط حسب احتياجاتك.
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+اكتب كود يتم من خلاله ادخال علامات الطلبة حسب العدد المدخل في البند السابق استخدم مصفوفة اسمها scroes
+
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("العدد الإجمالي للطلاب: ");
+        int numberOfStudents = scanner.nextInt();
+
+        // تعريف مصفوفة لتخزين علامات الطلاب
+        double[] scores = new double[numberOfStudents];
+
+        // قم بقراءة علامات الطلاب
+        for (int i = 0; i < numberOfStudents; i++) {
+            System.out.print("العلامة للطالب رقم " + (i + 1) + ": ");
+            scores[i] = scanner.nextDouble();
+        }
+
+        // هنا يمكنك إضافة المزيد من المعالجة والشروط حسب احتياجاتك.
+
+        // على سبيل المثال، يمكنك الآن البدء في معالجة هذه العلامات بما تراه مناسب، مثل حساب المتوسط أو معالجتها بأي شكل آخر حسب متطلباتك.
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+تحديد اعلا علامه من العلامات المدخله في المصفوفة في البند السابق  متغير اسمه best
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("العدد الإجمالي للطلاب: ");
+        int numberOfStudents = scanner.nextInt();
+
+        // تعريف مصفوفة لتخزين علامات الطلاب
+        double[] scores = new double[numberOfStudents];
+
+        // قم بقراءة علامات الطلاب
+        for (int i = 0; i < numberOfStudents; i++) {
+            System.out.print("العلامة للطالب رقم " + (i + 1) + ": ");
+            scores[i] = scanner.nextDouble();
+        }
+
+        // تحديد أعلى علامة وتخزينها في المتغير best
+        double best = scores[0]; // نفترض أن أعلى علامة هي العلامة الأولى في البداية
+
+        for (int i = 1; i < numberOfStudents; i++) {
+            if (scores[i] > best) {
+                best = scores[i];
+            }
+        }
+
+        System.out.println("أعلى علامة هي " + best);
+
+        // هنا يمكنك إضافة المزيد من المعالجة والشروط حسب احتياجاتك.
+    }
+}
+
+
+
+
+
+
+
+يتم طباعة تصنيف a or b or c or d بعد مقارنه علامة كل طالب مع اعلا علامة تم الحصول عليها في البند  السابق حسب المعاير التالية :   grade is score is >= -10   grade is score is >= -20    grade is score is >= -30       grade is score is >= -40  grade is f otherwirise 
+
+
+
+
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("العدد الإجمالي للطلاب: ");
+        int numberOfStudents = scanner.nextInt();
+
+        // تعريف مصفوفة لتخزين علامات الطلاب
+        double[] scores = new double[numberOfStudents];
+
+        // قم بقراءة علامات الطلاب
+        for (int i = 0; i < numberOfStudents; i++) {
+            System.out.print("العلامة للطالب رقم " + (i + 1) + ": ");
+            scores[i] = scanner.nextDouble();
+        }
+
+        // تحديد أعلى علامة وتخزينها في المتغير best
+        double best = scores[0]; // نفترض أن أعلى علامة هي العلامة الأولى في البداية
+
+        for (int i = 1; i < numberOfStudents; i++) {
+            if (scores[i] > best) {
+                best = scores[i];
+            }
+        }
+
+        System.out.println("أعلى علامة هي " + best);
+
+        // مقارنة علامات الطلاب وطباعة التصنيف
+        for (int i = 0; i < numberOfStudents; i++) {
+            if (scores[i] >= best - 10) {
+                System.out.println("الطالب رقم " + (i + 1) + " تصنيفه: A");
+            } else if (scores[i] >= best - 20) {
+                System.out.println("الطالب رقم " + (i + 1) + " تصنيفه: B");
+            } else if (scores[i] >= best - 30) {
+                System.out.println("الطالب رقم " + (i + 1) + " تصنيفه: C");
+            } else if (scores[i] >= best - 40) {
+                System.out.println("الطالب رقم " + (i + 1) + " تصنيفه: D");
+            } else {
+                System.out.println("الطالب رقم " + (i + 1) + " تصنيفه: F");
+            }
+        }
+    }
+}
