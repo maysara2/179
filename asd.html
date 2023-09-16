@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">فاتورتي</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">إضافة زبون</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">تقارير</a>
+                    </li>
+                </ul>
+                <button class="btn btn-danger ml-2">تسجيل الخروج</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="text-danger">زبون جديد</h2>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="firstName" placeholder="الاسم">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="lastName" placeholder="العائلة">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="address" placeholder="العنوان">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="mobile" placeholder="الجوال">
+                            </div>
+                            <button type="button" class="btn btn-primary" id="save">حفظ</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="text-success">الزبائن</h2>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered" id="customer-table">
+                            <thead>
+                                <tr>
+                                    <th>الاسم</th>
+                                    <th>العائلة</th>
+                                    <th>العنوان</th>
+                                    <th>الجوال</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- هنا ستظهر البيانات المدخلة -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const firstNameInput = document.getElementById("firstName");
+            const lastNameInput = document.getElementById("lastName");
+            const addressInput = document.getElementById("address");
+            const mobileInput = document.getElementById("mobile");
+            const saveButton = document.getElementById("save");
+            const customerTable = document.querySelector("#customer-table tbody");
+
+            saveButton.addEventListener("click", function () {
+                const firstName = firstNameInput.value;
+                const lastName = lastNameInput.value;
+                const address = addressInput.value;
+                const mobile = mobileInput.value;
+
+                if (firstName && lastName && address && mobile) {
+                    const newRow = customerTable.insertRow();
+                    const cell1 = newRow.insertCell(0);
+                    const cell2 = newRow.insertCell(1);
+                    const cell3 = newRow.insertCell(2);
+                    const cell4 = newRow.insertCell(3);
+
+                    cell1.textContent = firstName;
+                    cell2.textContent = lastName;
+                    cell3.textContent = address;
+                    cell4.textContent = mobile;
+
+                    firstNameInput.value = "";
+                    lastNameInput.value = "";
+                    addressInput.value = "";
+                    mobileInput.value = "";
+                } else {
+                    alert("الرجاء ملء جميع الحقول");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

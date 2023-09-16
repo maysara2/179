@@ -1,0 +1,240 @@
+// كلاس Account
+public class Account {
+    private int acc_no;
+    private String name;
+    private float amount;
+
+    public int getAcc_no() {
+        return acc_no;
+    }
+
+    public void setAcc_no(int acc_no) {
+        this.acc_no = acc_no;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public float getAmount() {
+        return amount;
+    }
+
+    public void setAmount(float amount) {
+        this.amount = amount;
+    }
+
+    @Override
+    public String toString() {
+        return "Account [acc_no=" + acc_no + ", name=" + name + ", amount=" + amount + "]";
+    }
+}
+
+// كلاس AccountActions
+public class AccountActions {
+    private float amt;
+
+    public float getAmt() {
+        return amt;
+    }
+
+    public void setAmt(float amt) {
+        this.amt = amt;
+    }
+
+    public void deposit(double amt) {
+        this.amt += amt;
+    }
+
+    public void withdraw(double amt) {
+        if (amt <= this.amt) {
+            this.amt -= amt;
+        } else {
+            System.out.println("رصيد غير كافي");
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "AccountActions [amt=" + amt + "]";
+    }
+}
+
+// كلاس CheckBalance
+public class CheckBalance {
+    public String toString() {
+        return "CheckBalance";
+    }
+}
+
+
+
+
+
+
+
+هذه هي الكلاسات الثلاث التي قمت بوصفها. يمكنك إنشاء كائنات من هذه الكلاسات واستخدامها حسب احتياجات مشروعك. مثلاً:
+
+
+
+
+public class Main {
+    public static void main(String[] args) {
+        Account account = new Account();
+        account.setAcc_no(12345);
+        account.setName("John Doe");
+        account.setAmount(1000.0f);
+
+        System.out.println(account.toString());
+
+        AccountActions actions = new AccountActions();
+        actions.setAmt(500.0f);
+        actions.deposit(200.0);
+        actions.withdraw(100.0);
+
+        System.out.println(actions.toString());
+
+        CheckBalance balance = new CheckBalance();
+        System.out.println(balance.toString());
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2
+
+
+
+
+
+
+
+
+
+
+public class Account {
+    private int acc_no;
+    private String name;
+    private float amount;
+
+    public int getAcc_no() {
+        return acc_no;
+    }
+
+    public void setAcc_no(int acc_no) {
+        this.acc_no = acc_no;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public float getAmount() {
+        return amount;
+    }
+
+    public void setAmount(float amount) {
+        this.amount = amount;
+    }
+
+    @Override
+    public String toString() {
+        return "Account [acc_no=" + acc_no + ", name=" + name + ", amount=" + amount + "]";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public class AccountActions {
+    private float amt;
+
+    public float getAmt() {
+        return amt;
+    }
+
+    public void setAmt(float amt) {
+        this.amt = amt;
+    }
+
+    public void deposit(double amt) {
+        this.amt += amt;
+    }
+
+    public void withdraw(double amt) {
+        if (amt <= this.amt) {
+            this.amt -= amt;
+        } else {
+            System.out.println("رصيد غير كافي");
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "AccountActions [amt=" + amt + "]";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public class CheckBalance {
+    public String toString() {
+        return "CheckBalance";
+    }
+}
